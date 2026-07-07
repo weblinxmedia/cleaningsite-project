@@ -89,14 +89,14 @@ export default function HeroForm() {
     <form onSubmit={handleSubmit(onSubmit)} className="w-[100%] md:w-[80%] mx-auto md:w-full mt-8">
       <fieldset disabled={isSubmitting} className="space-y-0">
         {/* Row 1: Name, Email, Phone */}
-        <div className="grid grid-cols-3 md:grid-cols-3 gap-2 md:gap-4 mb-4">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-4 mb-4">
           <FormInput placeholder="Full Name" {...register('name')} error={errors.name?.message} />
           <FormInput type="email" placeholder="Email Address" {...register('email')} error={errors.email?.message} />
           <FormInput type="tel" placeholder="Phone Number" {...register('phone')} error={errors.phone?.message} />
         </div>
 
         {/* Row 2: Service, Address */}
-        <div className="grid grid-cols-2 md:grid-cols-2 gap-2 md:gap-4 mb-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-4 mb-6">
           <FormSelect options={serviceOptions} {...register('service')} error={errors.service?.message} />
           <FormInput placeholder="Enter Address" {...register('address')} error={errors.address?.message} />
         </div>
