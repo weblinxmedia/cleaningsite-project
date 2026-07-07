@@ -1,17 +1,16 @@
 import { supabaseAdmin } from '@/lib/supabase'
 
 export async function getSettings() {
-  const { data } = await supabaseAdmin
+  const { data, error } = await supabaseAdmin
     .from('settings')
-    .select('*')
-    .eq('key', 'global')
-    .single()
+    .select('key, value')
 
-  if (!data) return {}
+  if (error || !data) return {}
 
-  // Unlock the JSONB box and flatten everything to the top level
-  return {
-    ...(data.value || {}),
-    id: data.id,
-  }
+  const settings: Record<string, string> = {}
+  data.forEach((item: { key: string; value: string }) => {
+    settings[item.key] = item.value
+  })
+
+  return settings
 }

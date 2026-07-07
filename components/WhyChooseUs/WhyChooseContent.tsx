@@ -35,9 +35,8 @@ export default function WhyChooseContent() {
       {/* Accordions */}
       <div className="space-y-4 mb-10">
         {accordionData.map((item, index) => (
-          <AnimateIn delay={index * 0.2}>
+          <AnimateIn key={index} delay={index * 0.2}>
             <AccordionItem
-              key={index}
               title={item.title}
               content={item.content}
               isOpen={openIndex === index}

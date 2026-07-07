@@ -30,13 +30,20 @@ const defaultSettings: SiteSettings = {
   office_hours: 'Monday to Saturday, 9:00 AM to 4:00 PM',
   address: '',
   hero_heading: 'A Spotless Space, Without the Stress. Claim Your Free Quote Now!',
-  hero_image_url: '/images/david.jpeg',
+  hero_image_url: '/images/david.jpg',
   social_facebook: '',
   social_instagram: '',
   social_linkedin: '',
 }
 
-const SettingsContext = createContext<SiteSettings>(defaultSettings)
+interface SettingsContextValue extends SiteSettings {
+  dataReady: boolean
+}
+
+const SettingsContext = createContext<SettingsContextValue>({
+  ...defaultSettings,
+  dataReady: false,
+})
 
 export function SettingsProvider({
   children,
@@ -51,6 +58,7 @@ export function SettingsProvider({
     ...defaultSettings,
     ...initialData
   }))
+  const [dataReady, setDataReady] = useState(false)
 
   // Keep the background fetch to keep things synced if you update in dashboard
   useEffect(() => {
@@ -65,13 +73,15 @@ export function SettingsProvider({
         }
       } catch (error) {
         console.error('Failed to load site settings:', error)
+      } finally {
+        setDataReady(true)
       }
     }
     fetchSettings()
   }, [])
 
   return (
-    <SettingsContext.Provider value={settings}>
+    <SettingsContext.Provider value={{ ...settings, dataReady }}>
       {children}
     </SettingsContext.Provider>
   )

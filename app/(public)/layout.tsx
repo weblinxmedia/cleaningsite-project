@@ -1,19 +1,14 @@
 import { Metadata } from 'next'
-import { supabaseAdmin } from '@/lib/supabase'
+import { getSettings } from '@/lib/getSettings'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import ScrollToTop from '@/components/ScrollToTop'
 import ChatBot from '@/components/ChatBot'
+import Preloader from '@/components/Preloader'
 
 export async function generateMetadata(): Promise<Metadata> {
   try {
-    const { data } = await supabaseAdmin
-      .from('settings')
-      .select('value')
-      .eq('key', 'global')
-      .single()
-
-    const settings = (data?.value || {}) as Record<string, string>
+    const settings = await getSettings()
 
     return {
       title: settings.meta_title || "Cornerstone Floor Care LLC | The Best Windows Cleaner in the Town",
@@ -32,7 +27,7 @@ export async function generateMetadata(): Promise<Metadata> {
 export default function PublicLayout({ children }: { children: React.ReactNode }) {
   return (
     <>
-
+      <Preloader />
       <Header />
       <main>{children}</main>
       <Footer />

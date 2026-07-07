@@ -1,17 +1,16 @@
-'use client' // <-- Add this
+'use client'
 export const dynamic = 'force-dynamic'
 import { Star } from 'lucide-react'
 import HeroForm from './HeroForm'
-import { useSettings } from '@/app/context/SettingsContext' // <-- Add this
+import { useSettings } from '@/app/context/SettingsContext'
 
 export default function HeroCard() {
-  const { hero_heading } = useSettings() // <-- Add this
+  const { hero_heading } = useSettings()
   const { phone } = useSettings()
   return (
     <div className="w-full hero-card h-full md:max-w-[63vw] mx-auto px-0 md:px-4">
       <div
-        className="bg-luxury-lite/70 backdrop-blur-xl box-clip  border border-luxury-lite/30 rounded-[3rem] py-12 px-4 md:p-12 transition-transform duration-700 hover:rotate-0"
-        style={{ transform: 'rotate(0deg)' }}
+        className="hero-glass-card rounded-[3rem] py-12 px-4 md:p-12"
       >
         <div className='w-full md:w-[98%] mx-auto'>
           {/* Top Badge */}
