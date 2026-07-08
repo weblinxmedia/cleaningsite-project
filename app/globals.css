@@ -170,20 +170,20 @@ section {
   }
 
   .font-batch-size {
-    font-size: 10px !important;
+    font-size: 13px !important;
   }
 
   .font-title-size {
-    font-size: 1.5rem !important;
+    font-size: 1.7rem !important;
   }
 
   .font-para-size {
-    font-size: 14px !important;
+    font-size: 16px !important;
   }
 
   .font-expand-size {
-    font-size: 14px !important;
-    padding: 10px 10px !important;
+    font-size: 17px !important;
+    padding: 2px 1px !important;
   }
 
   .button-font-size {
@@ -191,7 +191,7 @@ section {
   }
 
   .small-text {
-    font-size: 11px !important;
+    font-size: 12px !important;
   }
 
   .large-text {
@@ -293,6 +293,14 @@ section {
     text-align: center !important;
     padding: 10px !important;
     gap: 10px !important;
+  }
+
+  .pricing-cards-width {
+    flex: 100% !important;
+  }
+
+  section {
+    padding: 2rem 1.3rem;
   }
 
   .center-btns {

@@ -5,7 +5,7 @@ export default function FooterCompany() {
   return (
     <div>
       <h4 className="text-[16px] font-regular text-dark font-parkinsans uppercase mb-3">Company</h4>
-      <ul className="space-y-3">
+      <ul className="space-y-1 md:space-y-3 grid grid-cols-1">
         {companyLinks.map((link) => (
           <li key={link.href}>
             <Link href={link.href} className="text-gray-500 text-[15px] font-regular hover:text-luxury-pink transition-colors">

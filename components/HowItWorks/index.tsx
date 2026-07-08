@@ -9,7 +9,7 @@ export default function HowItWorks() {
   const animRef = useScrollAnimation()
   return (
     <section className="w-fullmd:py-10 ">
-      <div className="max-w-[1280px] mx-auto px-6 md:px-12">
+      <div className="max-w-[1280px] mx-auto px-0 md:px-12">
 
         <OurProcess />
 
@@ -21,9 +21,9 @@ export default function HowItWorks() {
         </div>
         {/* Bottom: Zigzag Timeline */}
         <div className='md:max-w-[65vw] mx-auto'>
-        <ZigzagTimeline />
-        
-</div>
+          <ZigzagTimeline />
+
+        </div>
       </div>
     </section>
   )

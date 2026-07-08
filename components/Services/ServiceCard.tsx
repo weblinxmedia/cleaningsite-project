@@ -14,19 +14,19 @@ export default function ServiceCard({ data }: ServiceCardProps) {
       {/* Top: Icon & Title */}
       <div className="flex items-start pb-4 flex-col gap-4">
         <div
-          className="w-15 h-15 md:w-21 md:h-21 bg-luxury-pink-soft rounded-[25px] flex items-center justify-center flex-shrink-0"
+          className="w-18 h-18 md:w-21 md:h-21 bg-luxury-pink-soft rounded-[25px] flex items-center justify-center flex-shrink-0"
         // Light violet background
         >
           {data.icon}
         </div>
-        <h3 className="font-regular font-parkinsans text-black mt-2  text-medium md:text-2xl">{data.title}</h3>
+        <h3 className="font-regular font-parkinsans text-black mt-2  text-xl md:text-2xl">{data.title}</h3>
       </div>
 
       {/* Middle: Feature List */}
-      <ul className="space-y-2 md:space-y-4 mb-1 flex-grow">
+      <ul className="space-y-2 md:space-y-4 mb-2 flex-grow">
         {data.features.map((feature, index) => (
 
-          <li key={index} className="flex items-center mb-2.5 gap-2">
+          <li key={index} className="flex items-center mb-1.5 md:mb-2.5 gap-1 md:gap-2">
             <div className="w-[fit-content] flex items-center justify-start flex-shrink-0">
               <Check size={13} className="text-luxury-pink" strokeWidth={3} />
             </div>
@@ -40,7 +40,7 @@ export default function ServiceCard({ data }: ServiceCardProps) {
         href={data.link}
         className="font-parkinsans flex items-center justify-between w-full text-sm px-5 py-2.5 rounded-full cursor-pointer text-luxury-lite bg-luxury-pink font-semibold tracking-normal transition-all duration-300 hover:shadow-lg transform hover:scale-[1.0]"
       >
-        <span className="text-sm font-regular">Learn more</span>
+        <span className="md:text-sm text-xs font-regular">Learn more</span>
         <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center transition-transform duration-300 group-hover:translate-x-1">
           <ArrowRight size={16} className="text-luxury-pink" />
         </div>

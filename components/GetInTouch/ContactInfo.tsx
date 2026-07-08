@@ -23,7 +23,7 @@ export default function ContactInfo({ location }: ContactInfoProps) {
         </h2></AnimateIn>
 
         {/* Paragraph */}
-        <AnimateIn delay={0.5}><p className="text-gray-500 font-para-size md:text-medium font-thin font-outfit mb-8">
+        <AnimateIn delay={0.5}><p className="text-gray-500 font-para-size md:text-medium font-thin font-outfit mb-5 md:mb-8">
           Ready to experience the cleansing difference? Book our service today, and we will handle the rest!      </p>
         </AnimateIn>
         {/* Office Hours */}
@@ -33,12 +33,12 @@ export default function ContactInfo({ location }: ContactInfoProps) {
         </div></AnimateIn>
 
         {/* Dynamic Address */}
-        <AnimateIn delay={0.5}><div className="mb-8">
+        <AnimateIn delay={0.5}><div className="mb-5 md:mb-8">
           <p className="text-[16px] text-gray-500 font-para-size font-thin">{location.address}</p>
         </div></AnimateIn>
 
         {/* Phone & Email */}
-        <AnimateIn delay={0.6}><div className="space-y-4 mb-8">
+        <AnimateIn delay={0.6}><div className="space-y-2 md:space-y-4 mb-5 md:mb-8">
           <div className="flex items-center gap-4">
             <Phone size={18} className="text-gray-500" />
             <a href={`tel:${phone}`} className="text-[16px] text-gray-500 font-para-size font-thin">{phone || '(321) 456-7890'}</a>

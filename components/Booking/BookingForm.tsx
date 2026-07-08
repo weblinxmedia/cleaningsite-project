@@ -14,7 +14,7 @@ export default function BookingForm() {
     address: '',
     info: '',
   })
-  
+
   // 🔹 Dynamic States
   const [services, setServices] = useState<{ label: string; value: string }[]>([])
   const [isSubmitting, setIsSubmitting] = useState(false)
@@ -53,10 +53,10 @@ export default function BookingForm() {
       const res = await fetch('/api/submit', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ 
-          ...formData, 
+        body: JSON.stringify({
+          ...formData,
           message: formData.info, // Map 'info' to 'message' for the leads dashboard
-          source: 'booking_form' 
+          source: 'booking_form'
         }),
       })
 
@@ -73,7 +73,7 @@ export default function BookingForm() {
     }
   }
 
-  const inputClasses = "w-full px-4 py-3.5 bg-white border border-gray-200 rounded-md text-sm text-gray-800 placeholder-gray-400 focus:outline-none focus:border-luxury-pink focus:ring-1 focus:ring-luxury-pink transition-all duration-300"
+  const inputClasses = "w-full px-2 md:px-4 py-2.5 md:py-3.5 bg-white border border-gray-200 rounded-md text-xs md:text-sm text-gray-800 placeholder-gray-400 focus:outline-none focus:border-luxury-pink focus:ring-1 focus:ring-luxury-pink transition-all duration-300"
 
   // 🎉 Success State
   if (isSubmitted) {
@@ -88,7 +88,7 @@ export default function BookingForm() {
   }
 
   return (
-    <div className="bg-white  min-h-screen p-8 md:p-12">
+    <div className="bg-white  min-h-screen p-1 md:p-12">
       <AnimateIn>
         <div className='w-full items-center justify-center  flex flex-col text-center'>
           {/* Top Label */}
@@ -97,7 +97,7 @@ export default function BookingForm() {
           </span>
 
           {/* Large Heading */}
-          <h2 className="text-3xl font-title-size md:max-w-[90%] md:text-[2.55rem] font-parkinsans font-regular mb-5">
+          <h2 className="text-3xl font-title-size md:max-w-[90%] md:text-[2.55rem] font-parkinsans tracking-tight leading-tight font-regular mb-5">
             Get Your Estimate & Book Now
           </h2>
         </div>
@@ -106,7 +106,7 @@ export default function BookingForm() {
       {/* Form */}
       <AnimateIn>
         <form onSubmit={handleSubmit} className="space-y-5 font-outfit">
-          
+
           {/* Row 1: Name & Email */}
           <div className="grid grid-cols-1 grid-change md:grid-cols-2 gap-5 ">
             <div>
@@ -167,7 +167,7 @@ export default function BookingForm() {
       {/* Bottom Text & Phone */}
       <AnimateIn>
         <div className="text-center font-parkinsans mt-6">
-          <p className="text-gray-900 font-parkinsans text-sm mb-3">If you have any questions, contact our office at</p>
+          <p className="text-gray-900 font-parkinsans text-sm mb-2">If you have any questions, contact our office at</p>
           <a href={`tel:${phone}`} className="inline-flex items-center gap-2 text-luxury-dark font-regular transition-colors">
             <div className='bg-luxury-pink  w-10 h-10 rounded-full flex items-center justify-center'><Phone size={18} /></div>
             <span>{phone || '+ 1 (346) 565-3599'}</span>

@@ -11,9 +11,9 @@ export default function CopyrightBar() {
   const currentYear = new Date().getFullYear()
 
   return (
-    <div className="mt-16">
+    <div className=" mt-8 md:mt-16">
       {/* Social Icons */}
-      <div className="flex items-center justify-end gap-3 mb-8">
+      <div className="flex items-center justify-center md:justify-end gap-3 mb-8">
         {socialIcons.map((social, index) => (
           <a
             key={index}
@@ -32,11 +32,11 @@ export default function CopyrightBar() {
 
       {/* Copyright Text */}
       <div className="flex flex-col md:flex-row items-center justify-center gap-1 text-center md:text-left">
-        <div className="flex items-center gap-2 text-gray-500 text-[16px]">
+        <div className="flex items-center gap-2 text-gray-500 text-[12px] md:text-[16px]">
           <Copyright size={16} />
           <span>Copyright {currentYear} - Cornerstone Floor Care LLC</span>
         </div>
-        <div className="text-gray-500 text-[16px]">
+        <div className="text-gray-500 text-[12px] md:text-[16px]">
           | Developed & Marketing by{' '}
           <a
             href="https://www.weblinxmedia.com"

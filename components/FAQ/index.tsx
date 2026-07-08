@@ -7,15 +7,15 @@ export default function FAQ() {
   return (
     <>
       <section className="w-full  bg-white">
-        <div className="max-w-[1280px] pt-15 pb-10 mx-auto px-6 md:px-12">
+        <div className="max-w-[1280px] md:pt-15 pt-6 md:pb-10 pb-4 mx-auto px-1 md:px-12">
 
           {/* Center Header */}
           <AnimateIn>
-            <div className="text-center mb-16">
+            <div className="text-center mb-5 md:mb-16">
               <span className="text-[11px] font-batch-size font-medium uppercase tracking-widest font-parkinsans mb-6">
                 FAQ
               </span>
-              <h2 className="text-3xl w-[40vw] font-title-size text-black mx-auto md:text-5xl lg:text-[2.4rem] font-parkinsans leading-11 font-regular mt-3 mb-5">
+              <h2 className="text-3xl w-full tracking-tight md:w-[40vw] font-title-size text-black mx-auto md:text-5xl lg:text-[2.4rem] font-parkinsans leading-tight font-regular mt-3 mb-5">
                 Frequently Asked Questions
               </h2>
             </div>
@@ -41,7 +41,7 @@ export default function FAQ() {
             <AnimateIn delay={0.2}><span className="text-[11px] font-batch-size font-medium uppercase tracking-widest font-parkinsans mb-6">
               From Our Blog
             </span></AnimateIn>
-            <AnimateIn delay={0.3}><h2 className="text-3xl w-[40vw] font-title-size text-black mx-auto md:text-5xl lg:text-[2.4rem] font-parkinsans leading-11 font-regular mt-3 mb-8">
+            <AnimateIn delay={0.3}><h2 className="text-3xl w-full md:w-[40vw] font-title-size text-black mx-auto md:text-5xl lg:text-[2.4rem] font-parkinsans leading-tight font-regular mt-3 mb-8">
               Cleaning Tips & Hacks
             </h2></AnimateIn>
             <AnimateIn delay={0.4}><Link href="/blog" className="text-black bg-luxury-pink-soft border-1 border-luxury-pink py-3 rounded-full px-6 font-medium text-sm hover:underline">
