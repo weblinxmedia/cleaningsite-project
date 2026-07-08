@@ -9,7 +9,7 @@ import AnimateIn from '../AnimateIn'
 export default function Footer() {
   return (
     <footer className="w-full bg-white  pb-8" style={{ background: 'linear-gradient(to bottom, #f5f7f2 20%, #fff 100%)' }}>
-      <div className="max-w-[1280px] rounded-t-4xl mx-auto px-4 md:px-12"
+      <div className="max-w-[1280px] rounded-t-4xl mx-auto px-6 md:px-12"
       >
 
         {/* Top: Newsletter */}

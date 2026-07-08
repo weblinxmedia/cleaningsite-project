@@ -295,6 +295,10 @@ section {
     gap: 10px !important;
   }
 
+  .hero-card-entrance {
+    margin-top: 20% !important;
+  }
+
   .pricing-cards-width {
     flex: 100% !important;
   }
