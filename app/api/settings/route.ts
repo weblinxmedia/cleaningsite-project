@@ -8,14 +8,20 @@ export async function GET() {
       .select('key, value')
 
     if (error || !data) return NextResponse.json({})
-    
+
     // Flatten rows into a single object: { site_name: '...', logo_url: '...' }
     const settings: Record<string, string> = {}
     data.forEach((item: { key: string; value: string }) => {
       settings[item.key] = item.value
     })
-    
-    return NextResponse.json(settings)
+
+    return NextResponse.json(settings, {
+      headers: {
+        // Browser caches for 60s; serves stale for up to 5min while revalidating.
+        // This prevents a network round-trip (and re-render) on every tab switch.
+        'Cache-Control': 'public, max-age=60, stale-while-revalidate=300',
+      },
+    })
   } catch (error) {
     console.error('GET Settings Error:', error)
     return NextResponse.json({})

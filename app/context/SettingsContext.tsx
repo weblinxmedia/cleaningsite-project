@@ -52,15 +52,28 @@ export function SettingsProvider({
   children: ReactNode,
   initialData: any
 }) {
-  // 🔥 INITIALIZE STATE WITH SERVER DATA
-  // This removes the flicker because the first render matches the server HTML exactly.
-  const [settings, setSettings] = useState<SiteSettings>(() => ({
-    ...defaultSettings,
-    ...initialData
-  }))
-  const [dataReady, setDataReady] = useState(false)
+  // ─── Determine if the server gave us real data ───────────────────────────
+  const hasServerData = initialData && Object.keys(initialData).length > 0
 
-  // Keep the background fetch to keep things synced if you update in dashboard
+  // ─── Initial state: server data first, then localStorage, then defaults ──
+  const [settings, setSettings] = useState<SiteSettings>(() => {
+    if (hasServerData) return { ...defaultSettings, ...initialData }
+    // SSR miss — try localStorage for an instant fallback (client only)
+    try {
+      const stored =
+        typeof window !== 'undefined'
+          ? localStorage.getItem('site_settings')
+          : null
+      if (stored) return { ...defaultSettings, ...JSON.parse(stored) }
+    } catch { /* ignore */ }
+    return { ...defaultSettings }
+  })
+
+  // ─── dataReady: true immediately if the server already gave us data ──────
+  // This prevents components that gate on dataReady from showing stale content.
+  const [dataReady, setDataReady] = useState(hasServerData)
+
+  // ─── Background fetch: keeps settings in sync after dashboard changes ────
   useEffect(() => {
     const fetchSettings = async () => {
       try {
@@ -68,8 +81,14 @@ export function SettingsProvider({
         if (res.ok) {
           const data = await res.json()
           const mergedSettings = { ...defaultSettings, ...data }
-          setSettings(mergedSettings)
-          localStorage.setItem('site_settings', JSON.stringify(mergedSettings))
+          // Only re-render if something actually changed
+          setSettings(prev => {
+            const prevStr = JSON.stringify(prev)
+            const nextStr = JSON.stringify(mergedSettings)
+            if (prevStr === nextStr) return prev // no-op — avoids re-render
+            localStorage.setItem('site_settings', nextStr)
+            return mergedSettings
+          })
         }
       } catch (error) {
         console.error('Failed to load site settings:', error)
