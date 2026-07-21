@@ -1,6 +1,7 @@
 'use client' // 1. Make it a client component to use the hook
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { useSettings } from '@/app/context/SettingsContext'// 2. Import the hook
 
 export default function Logo() {
@@ -12,11 +13,16 @@ export default function Logo() {
 
   return (
     <Link href="/" className="flex-shrink-0 text-2xl font-bold tracking-wider">
-      <img 
-        src={logoSrc} 
-        width="110" 
-        alt={altText} 
-        className="transition-all duration-300" 
+      <Image
+        src={logoSrc}
+        width="110"
+        alt={altText}
+        fetchPriority='high'
+        fill
+        priority
+        loading="eager"
+        quality={100}
+        className="transition-all duration-300"
       />
     </Link>
   )
