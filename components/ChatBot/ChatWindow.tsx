@@ -64,9 +64,9 @@ export default function ChatWindow({ isOpen, onClose, initialMessages = [] }: Ch
                 <Sparkles size={20} />
               </div>
               <div>
-                <h3 className="font-parkinsans text-medium font-semibold text-gray-900 tracking-tight">Corner Stone</h3>
+                <h3 className="font-parkinsans text-medium font-semibold text-gray-900 tracking-tight">Shazam</h3>
                 <p className="text-[12px] text-gray-400 -mt-0.5">
-                  Floor Care LLC
+                  Clean Windows
                 </p>
               </div>
             </div>
@@ -105,7 +105,7 @@ export default function ChatWindow({ isOpen, onClose, initialMessages = [] }: Ch
               <div className="flex h-full flex-col items-center justify-center text-center opacity-60">
                 <Sparkles size={40} className="mb-4 text-luxury-pink" />
                 <p className="font-parkinsans text-sm text-gray-500">
-                  Welcome to Corner Stone Floor Care LLC.<br />How may I assist you today?
+                  Welcome to Shazam Clean Windows. <br />How may I assist you today?
                 </p>
               </div>
             ) : (

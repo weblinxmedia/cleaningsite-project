@@ -14,14 +14,14 @@ export async function generateMetadata(): Promise<Metadata> {
   try {
     const settings = await getCachedSettings()
     return {
-      title: settings.meta_title || "Cornerstone Floor Care LLC | The Best Windows Cleaner in the Town",
+      title: settings.meta_title || "Shazam Clean Windows | Best Windows & Solar Panel Cleaner in CA",
       description: settings.meta_description || 'Premium cleaning services',
       keywords: settings.meta_keywords ? settings.meta_keywords.split(',').map((k) => k.trim()) : [],
 
     }
   } catch {
     return {
-      title: 'Cornerstone Floor Care LLC | The Best Windows Cleaner in the Town',
+      title: 'Shazam Clean Windows | Best Windows & Solar Panel Cleaner in CA',
       description: 'Premium cleaning services',
     }
   }
