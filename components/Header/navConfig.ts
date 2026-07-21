@@ -7,7 +7,7 @@ export interface NavItem {
 export const navConfig: NavItem[] = [
   { label: 'Home', href: '/' },
   {
-    label: 'Services', href:'/services',
+    label: 'Services', href: '/services',
     dropdown: [
       { label: 'Office Cleaning', href: '/services/office-cleaning' },
       { label: 'House Cleaning', href: '/services/house-cleaning' },
@@ -17,10 +17,12 @@ export const navConfig: NavItem[] = [
   },
   {
     label: 'Areas',
-    dropdown: [],
+    dropdown: [
+      { label: 'Baltimore', href: '/areas/baltimore' }
+    ],
   },
   {
-    label: 'About', href:'/about',
+    label: 'About', href: '/about',
     dropdown: [
       { label: 'Our Team', href: '/team' },
       { label: 'Client Testimonials', href: '/client-testimonials' },
