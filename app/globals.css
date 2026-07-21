@@ -2,8 +2,8 @@
 @import "tailwindcss";
 
 @theme {
-  --color-luxury-pink: #821f40;
-  --color-luxury-pink-soft: #967b8365;
+  --color-luxury-pink: #093e9e;
+  --color-luxury-pink-soft: #093e9e45;
   --color-luxury-dark: #1a1a1a;
   --color-luxury-lite: #ffffff;
   --color-luxury-dark: #000000;
