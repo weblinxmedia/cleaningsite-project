@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from 'react'
 import { useSettings } from '@/app/context/SettingsContext'
-import './preloader.css'
+// import './preloader.css'
 
 export default function Preloader() {
   const { dataReady } = useSettings()
