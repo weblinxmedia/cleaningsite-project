@@ -9,7 +9,15 @@ import Footer from '@/components/Footer'
 import Providers from './Providers'
 import { getSettings } from '@/lib/getSettings'
 import ScrollToTop from '@/components/ScrollToTop'
-import NextTopLoader from 'nextjs-toploader'; // 🔹 Import the loader
+import NextTopLoader from 'nextjs-toploader' // 🔹 Import the loader
+
+export const metadata: Metadata = {
+  icons: {
+    icon: '/images/tony1.webp',
+    shortcut: '/images/tony1.webp',
+    apple: '/images/tony1.webp',
+  },
+}
 
 export const dynamic = 'force-dynamic'
 
