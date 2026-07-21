@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { supabaseAdmin } from '@/lib/supabase'
+import { revalidateTag } from 'next/cache'
 
 export async function GET() {
   try {
@@ -54,6 +55,10 @@ export async function PUT(req: NextRequest) {
       console.error('PUT Settings Error:', error)
       return NextResponse.json({ error: error.message }, { status: 500 })
     }
+
+    // Bust the server-side metadata cache so generateMetadata() reflects the
+    // new title/description/keywords on the very next page request.
+    revalidateTag('site-settings', { expire: 0 })
 
     return NextResponse.json({ success: true })
   } catch (error) {
