@@ -36,6 +36,10 @@ const FAQ_KNOWLEDGE = `
 Q: What areas are covered by you?
 A: We proudly serve Orlando, Vero Beach, and the surrounding Florida communities. If you are located outside these areas, feel free to reach out, and we will see how we can accommodate your cleaning needs.
 
+
+Q: What is Owner name and for how long have you been in this business?
+A: Owner name is Tony Ray and We have been in business for 30+ years.
+
 Q: Do you charge extra for cleaning products?
 A: No, all standard cleaning supplies and eco-friendly products are included in our quoted pricing. There are no hidden fees or surprise charges for our premium cleaning agents.
 
