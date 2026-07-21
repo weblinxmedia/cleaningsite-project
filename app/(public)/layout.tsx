@@ -23,7 +23,6 @@ export async function generateMetadata(): Promise<Metadata> {
     return {
       title: 'Cornerstone Floor Care LLC | The Best Windows Cleaner in the Town',
       description: 'Premium cleaning services',
-
     }
   }
 }

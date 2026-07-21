@@ -26,7 +26,7 @@ const defaultSettings: SiteSettings = {
   meta_title: "",
   meta_description: 'Professional cleaning services',
   meta_keywords: 'cleaning, commercial, office',
-  logo_url: '/images/tony1.svg',
+  logo_url: '/images/tony1.webp',
   office_hours: 'Monday to Saturday, 9:00 AM to 4:00 PM',
   address: '',
   hero_heading: 'A Spotless Space, Without the Stress. Claim Your Free Quote Now!',
