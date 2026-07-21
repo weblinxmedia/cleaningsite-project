@@ -61,7 +61,7 @@ export default function EcoImage() {
   return (
     <div ref={containerRef} className="relative w-full h-[400px] md:h-[450px] lg:h-[500px]  group">
       <img
-        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyIJdfPwSK9OZ-uLRchUHSyJB4lx0WBE6zMfIds0-v-w&s=10" alt="Green eco cleaning"
+        src="/images/homepage/solarpanel.webp" alt="Green eco cleaning"
 
 
         className="object-cover rounded-4xl w-full h-full rounded-3xl transition-transform duration-700 ease-out"

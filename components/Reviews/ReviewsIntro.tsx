@@ -9,7 +9,7 @@ export default function ReviewsIntro() {
       {/* Left Side: Image */}
       <div className="relative w-full overflow-hidden shadow-xl group">
         <img
-          src="https://media.istockphoto.com/id/2172691489/photo/young-woman-cleaning-the-kitchen.jpg?s=612x612&w=0&k=20&c=2u8Z9qcV6829MNOqYjrIPtsP-jrzBmyCG8JYS6US-OM=" alt="Happy customer service team"
+          src="/images/homepage/windows.webp" alt="Happy customer service team"
 
 
           className="object-contain transition-transform rounded-3xl duration-700 ease-out "

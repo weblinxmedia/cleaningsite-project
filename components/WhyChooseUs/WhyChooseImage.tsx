@@ -6,7 +6,7 @@ export default function WhyChooseImage() {
   return (
     <div ref={animRef} className="relative w-full h-[350px] md:h-[500px] lg:h-[500px] rounded-2xl overflow-hidden shadow-2xl group">
       <img
-        src="/images/reviewsimage.webp"
+        src="/images/homepage/storefront.webp"
         alt="Windows cleaning near me"
 
         className="object-cover w-[100%] h-[100%] transition-transform duration-700 ease-out"

@@ -10,7 +10,7 @@ export default function Booking() {
       {/* Background Image Layer */}
       <div className="absolute inset-0 h-full  z-0">
         <img
-          src="https://img.magnific.com/free-photo/composition-cleaning-objects-with-copyspace_23-2148104508.jpg" alt="Cleaning background"
+          src="/images/homepage/threestory1.webp" alt="Cleaning background"
 
 
           className="object-cover w-[100%] h-[100%]"
