@@ -16,6 +16,8 @@ export default function HeroBackground() {
         fill
         priority
         sizes="100vw"
+        fetchPriority="high"
+        loading="eager"
         className="object-cover no-repeat object-top md:object-left"
         quality={100}
       />

@@ -34,82 +34,10 @@ export default async function RootLayout({ children }: { children: React.ReactNo
     <html lang="en" className={`${parkinsans.variable} ${outfit.variable} scroll-smooth`}>
       <body className={`${parkinsans.className} ${outfit.className} antialiased bg-white text-gray-900`} suppressHydrationWarning>
         {/* 🔹 SERVER-RENDERED PRELOADER — visible from first paint, before JS loads */}
-        <div
-          id="server-preloader"
-          suppressHydrationWarning
-          style={{
-            position: 'fixed',
-            inset: 0,
-            zIndex: 9999999999,
-            pointerEvents: 'auto',
-          }}
-          aria-hidden="true"
-        >
-          {/* Left curtain half */}
-          <div
-            id="server-preloader-left"
-            style={{
-              position: 'absolute',
-              top: 0,
-              left: 0,
-              bottom: 0,
-              width: '50%',
-              background: '#ffffff',
-            }}
-          />
-          {/* Right curtain half */}
-          <div
-            id="server-preloader-right"
-            style={{
-              position: 'absolute',
-              top: 0,
-              right: 0,
-              bottom: 0,
-              width: '50%',
-              background: '#ffffff',
-            }}
-          />
-          {/* Centered logo */}
-          <div
-            id="server-preloader-logo"
-            className="preloader-logo-pulse"
-            style={{
-              position: 'absolute',
-              inset: 0,
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              zIndex: 2,
-            }}
-          >
-            <img
-              src={initialSettings?.logo_url || '/images/mainlogo.webp'}
-              alt=""
-              style={{
-                width: 160,
-                height: 'auto',
-                filter: 'drop-shadow(0 4px 24px rgba(130,31,64,0.18))',
-              }}
-            />
-          </div>
-        </div>
+
 
         {/* Inline script: if already visited this session, hide the server preloader immediately */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              try {
-                if (sessionStorage.getItem('preloader_shown')) {
-                  var el = document.getElementById('server-preloader');
-                  if (el) el.style.display = 'none';
-                  document.body.style.overflow = '';
-                } else {
-                  document.body.style.overflow = 'hidden';
-                }
-              } catch(e) {}
-            `,
-          }}
-        />
+
 
         {/* 🔹 Horizontal Loading Bar Configuration */}
         <NextTopLoader
