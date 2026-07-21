@@ -4,7 +4,7 @@ import Image from 'next/image'
 import { useSettings } from '@/app/context/SettingsContext'
 export default function Logo() {
   const { logo_url, site_name } = useSettings()
-  const logoSrc = logo_url || '/images/mainlogo.webp'
+  const logoSrc = logo_url || '/images/tony1.svg'
   const altText = site_name || 'Shazam Clean Windows | Best Windows & Solar Cleaning in CA'
   return (
     <Link href="/" className="flex-shrink-0 text-2xl font-bold tracking-wider">
