@@ -30,7 +30,7 @@ const defaultSettings: SiteSettings = {
   office_hours: 'Monday to Saturday, 9:00 AM to 4:00 PM',
   address: '',
   hero_heading: 'A Spotless Space, Without the Stress. Claim Your Free Quote Now!',
-  hero_image_url: '/images/david.jpg',
+  hero_image_url: '/images/herobanner.webp',
   social_facebook: '',
   social_instagram: '',
   social_linkedin: '',

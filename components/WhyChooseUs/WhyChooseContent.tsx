@@ -17,7 +17,7 @@ export default function WhyChooseContent() {
     <div className="flex flex-col overflow-hidden justify-center h-full py-8">
       {/* Small Label */}
       <AnimateIn>
-        <span className="text-[18px] font-batch-size font-medium uppercase tracking-widest font-parkinsans mb-3">
+        <span className="text-[11px] font-batch-size font-medium uppercase tracking-widest font-parkinsans mb-3">
           Why choose us
         </span></AnimateIn>
 
